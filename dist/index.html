@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <input type="text"><button id="roster">Get Roster</button>
+            <button id="showDream">Dream Team</button>
+        </div>
+
+        <div id="content"></div>
+
+    </div>
+
+    <script id="img-template" type="text/x-handlebars-template">
+        {{#each team}}
+        <div class="card" data-id="{{pId}}">
+            <span>{{pFirstName}} {{pLastName}}</span>
+            <span>{{pJersey}}</span>
+            <img class="pImg" src="https://nba-players.herokuapp.com/players/{{pLastName}}/{{pFirstName}}">
+            <span>{{pPosition}}</span>
+            {{#unless isDream}}
+                <div class="dreanDiv">
+                    <p class="mamber">check</p>
+                    <button id="notDreamTm">Add to Dream Team</button>
+                </div>
+                    {{/unless}}
+            {{#if isDream}}
+                <div class="dreanDiv">
+                    <p class="member">Dream Team Member!</p>
+                    <button id="isDreamTm">Remove from Dream Team</button>
+                </div>
+            {{/if}}
+                
+        </div>
+        {{/each}}
+    </script>
+
+
+    <script src="./jquery/dist/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>    
+    <script src="main.js"></script>
+</body>
+</html>
