@@ -1,0 +1,110 @@
+body {
+    background-color: gray;
+}
+#container {
+    
+    /* background-color: gray; */
+     display: grid;
+    /*grid-template-rows: 1fr 9fr; */
+}
+#header {
+    height: 30px;
+    display: grid;
+    grid-template-columns: 8fr 1fr 1fr;
+    column-gap: 5px;
+    padding: 5px;
+    margin: 15px;
+}
+
+input {
+    /* width: 70%; */
+    height: 20px;
+    padding: 5px;
+    margin: 5px;
+    display: grid;
+    column-gap: 5px;
+}
+
+#roster {
+    /* width: 10%; */
+    height: 30px;
+    padding: 3px;
+    margin: 5px;
+    display: grid;
+}
+
+#showDream {
+    /* width: 10%; */
+    height: 30px;
+    padding: 5px;
+    margin: 3px;
+    display: grid;
+}
+
+
+#content{
+    /* height: 90vh;
+    width: 95vw; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 1vw;
+}
+
+.card {
+    background-color: orange;
+    /* width: 90%; */
+    /* height: fit-content; */
+    max-height: 350px;
+    display: grid;
+    margin: 5px;
+    padding: 10px;
+    box-shadow: 2px 2px black;
+    border-radius: 4px;
+    grid-template-rows: repeat(5, 1fr);
+    /* grid-template-rows: 1fr 1fr 8fr 1fr 1fr; */
+    justify-content: center;
+    
+}
+
+.pImg {
+    width: 20vw;
+    background-color: gray;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    padding: 5px;
+    margin: 5px;
+}
+
+span {
+    display: grid;
+    justify-content: center;
+    padding: 3px;
+}
+
+.dreanDiv {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    padding: 3px;
+}
+
+#isDreamTm {
+    display: grid;
+    background-color: blue;
+    justify-content: center;
+    padding: 3px;
+}
+
+#notDreamTm {
+    display: grid;
+    background-color: greenyellow;
+    justify-content: center;
+    padding: 3px;
+}
+
+.member {
+    display: grid;
+    justify-content: center;
+    padding: 3px;
+}
