@@ -23,6 +23,7 @@ $("#content").on("click", "#isDreamTm", function() {
     let player = currTeam.find(p => (p.pId == playerId))
     player.isDream = false
     removeFromDreamTeam(player)
+
     renderTeam(currTeam)
 })
 
@@ -41,10 +42,18 @@ const removeFromDreamTeam = function(dreamPlayer) {
     $.ajax({
         method: "DELETE",
         url: `/roster`,
-        success: dreamPlayer
+        success: function() {
+            console.log(dreamPlayer);
+            console.log(currTeam);
+            // debugger
+            currTeam = currTeam.filter(p => p.pId !== dreamPlayer.pId)//.isDream = false;
+
+            renderTeam(currTeam)
+            // let index = dreamTeam.findIndex(p => p.playerId == dreamPlayer.playerId)
+            // dreamTeam.splice(index, 1)
+            // debugger
+        }
       });
-      let index = dreamTeam.findIndex(p => p == dreamPlayer)
-      dreamTeam.splice(index, 1)
 }
 
 const renderTeam = function (theTeam) {

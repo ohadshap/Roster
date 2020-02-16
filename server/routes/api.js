@@ -54,7 +54,7 @@ router.get('/dreamTeam', function (request, response) {
 
 router.post('/roster', function (request, response) {
     let dreamPlayer = request.body
-    if(dreamTeam.length < 5) {
+    if(dreamTeam.length < 5 && !dreamTeam.find(d => d.pFirstName == dreamPlayer.pFirstName)) {
         dreamTeam.push(dreamPlayer)
     }
     response.send(dreamTeam)
